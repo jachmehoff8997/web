@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function removeDuplicates(stringsArray) {
+  const uniqueStringsArray = [...new Set(stringsArray)];
+  return uniqueStringsArray;
+}
+
+function displayUniqueStrings() {
+  const inputStrings = document.getElementById('input-strings').value;
+  const stringsArray = inputStrings.split(',').map(str => str.trim());
+
+  const uniqueStrings = removeDuplicates(stringsArray);
+  document.getElementById('unique-strings').textContent = `Unique Strings: ${uniqueStrings.join(', ')}`;
+}
+</script>
+</head>
+<body>
+
+<h1>Remove Duplicates</h1>
+<p>Enter a comma-separated list of strings:</p>
+<input type="text" id="input-strings">
+<button onclick="displayUniqueStrings()">Remove Duplicates</button>
+
+<p id="unique-strings"></p>
+
+</body>
+</html>

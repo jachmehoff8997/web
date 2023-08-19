@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+  function counter() {
+    let count = 0;
+
+    function increment() {
+      count += 1;
+    }
+
+    function decrement() {
+      count -= 1;
+    }
+
+    function getCount() {
+      return count;
+    }
+
+    return {
+      increment: increment,
+      decrement: decrement,
+      getCount: getCount
+    };
+  }
+
+  // Example usage:
+  const myCounter = counter();
+
+  function updateCounterDisplay() {
+    const countDisplay = document.getElementById('count-display');
+    countDisplay.textContent = myCounter.getCount();
+  }
+
+  function incrementCounter() {
+    myCounter.increment();
+    updateCounterDisplay();
+  }
+
+  function decrementCounter() {
+    myCounter.decrement();
+    updateCounterDisplay();
+  }
+</script>
+</head>
+<body>
+
+<h1>Counter App</h1>
+<p>Current Count: <span id="count-display">0</span></p>
+<button onclick="incrementCounter()">Increment</button>
+<button onclick="decrementCounter()">Decrement</button>
+
+</body>
+</html>

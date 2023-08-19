@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+  function capitalizeFirstLetter(stringsArray) {
+    const capitalizedArray = stringsArray.map(str => str.charAt(0).toUpperCase() + str.slice(1));
+    return capitalizedArray;
+  }
+
+  function updateCapitalizedList() {
+    const inputStrings = document.getElementById('input-strings').value;
+    const stringsArray = inputStrings.split(',').map(str => str.trim());
+    const capitalizedStrings = capitalizeFirstLetter(stringsArray);
+
+    const capitalizedText = document.getElementById('capitalized-text');
+    capitalizedText.textContent = capitalizedStrings.join(', ');
+  }
+</script>
+</head>
+<body>
+
+<h1>String Capitalization</h1>
+<p>Enter a comma-separated list of strings:</p>
+<input type="text" id="input-strings">
+<button onclick="updateCapitalizedList()">Capitalize</button>
+
+<h2>Capitalized Strings:</h2>
+<p id="capitalized-text"></p>
+
+</body>
+</html>

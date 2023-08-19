@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function sortAscending(numbersArray) {
+  const sortedArray = numbersArray.slice().sort((a, b) => a - b);
+  return sortedArray;
+}
+
+function displaySortedNumbers() {
+  const inputNumbers = document.getElementById('input-numbers').value;
+  const numbersArray = inputNumbers.split(',').map(num => parseInt(num.trim(), 10));
+
+  const sortedNumbers = sortAscending(numbersArray);
+  document.getElementById('sorted-numbers').textContent = `Sorted Numbers: ${sortedNumbers.join(', ')}`;
+}
+</script>
+</head>
+<body>
+
+<h1>Number Sorting</h1>
+<p>Enter a comma-separated list of numbers:</p>
+<input type="text" id="input-numbers">
+<button onclick="displaySortedNumbers()">Sort Numbers</button>
+
+<p id="sorted-numbers"></p>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function sumArray(numbersArray) {
+  let sum = 0;
+
+  for (let i = 0; i < numbersArray.length; i++) {
+    sum += numbersArray[i];
+  }
+
+  return sum;
+}
+
+function calculateSum() {
+  const inputNumbers = document.getElementById('input-numbers').value;
+  const numbersArray = inputNumbers.split(',').map(num => parseInt(num.trim(), 10));
+
+  const result = sumArray(numbersArray);
+  document.getElementById('result').textContent = `Sum: ${result}`;
+}
+</script>
+</head>
+<body>
+
+<h1>Sum Calculator</h1>
+<p>Enter a comma-separated list of numbers:</p>
+<input type="text" id="input-numbers">
+<button onclick="calculateSum()">Calculate Sum</button>
+
+<p id="result"></p>
+
+</body>
+</html>

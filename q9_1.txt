@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function filterOddNumbers(numbersArray) {
+  const oddNumbers = numbersArray.filter(number => number % 2 !== 0);
+  return oddNumbers;
+}
+
+function displayOddNumbers() {
+  const inputNumbers = document.getElementById('input-numbers').value;
+  const numbersArray = inputNumbers.split(',').map(num => parseInt(num.trim(), 10));
+
+  const oddNumbers = filterOddNumbers(numbersArray);
+  document.getElementById('odd-numbers').textContent = `Odd Numbers: ${oddNumbers.join(', ')}`;
+}
+</script>
+</head>
+<body>
+
+<h1>Odd Number Filter</h1>
+<p>Enter a comma-separated list of numbers:</p>
+<input type="text" id="input-numbers">
+<button onclick="displayOddNumbers()">Filter Odd Numbers</button>
+
+<p id="odd-numbers"></p>
+
+</body>
+</html>
